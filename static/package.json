@@ -9,8 +9,10 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "daisyui": "^2.41.0"
+  },
   "devDependencies": {
     "tailwindcss": "^3.2.4"
-  }  
+  }
 }
