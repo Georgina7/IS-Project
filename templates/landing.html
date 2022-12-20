@@ -71,7 +71,7 @@
                 -->
                 <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                   <!-- Active: "bg-gray-100", Not Active: "" -->
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                  <a href="{{ url_for('logout') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
                 </div>
               </div>
             </div>
@@ -182,20 +182,12 @@
         </div>
       </div>
 
-      <!-- Add Case Modal -->
-      <div class="flex justify-center h-full w-full ">
-        <div class="flex flex-col max-w-md gap-2 p-6 rounded-md shadow-md bg-white dark:bg-gray-900 dark:text-gray-100">
-          <h2 class="flex items-center gap-2 text-xl font-semibold leading-tight tracking-wide">
-            Add Case
-          </h2>
-          
-          <p class="flex-1 dark:text-gray-400">Mauris et lorem at elit tristique dignissim et ullamcorper elit. In sed feugiat mi. Etiam ut lacinia dui.</p>
-          <div class="flex flex-col justify-end gap-3 mt-6 sm:flex-row">
-            <button class="px-6 py-2 rounded-sm">Cancel</button>
-            <button class="px-6 py-2 rounded-sm shadow-sm dark:bg-violet-400 dark:text-gray-900">Add</button>
-          </div>
-        </div>
-      </div>
+      <p>
+        {{cases}}
+      </p>
+
+      <a href="{{url_for('case', case_id='GcagJ2GEjbNSjFD33i0o')}}">Case  1</a>
+      
 
       
   </body>

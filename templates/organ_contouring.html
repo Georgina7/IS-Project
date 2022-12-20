@@ -6,5 +6,13 @@
   </head>
   <body>
     <h1> Organ Contouring Page </h1>
+    <p>{{ days }}</p>
+    <p>{{ path }}</p>
+    <img src="{{ path }}">
+    <form enctype="multipart/form-data" action="{{url_for('add_case') }}" method="POST">
+      <input name="scan" type="file">
+      <button type="submit">Upload</button>
+
+    </form>
   </body>
 </html>

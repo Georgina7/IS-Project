@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+    <title>Ai Contour</title>
+</head>
+<body>
+    <div class="navigation">
+        <div class="navigation__left">
+            <div class="logo"><span>AI Contour</span></div>
+        </div>
+        <div class="navigation__right">
+            <ul>
+                <li><span class="fas fa-user-alt"></span>  User Name</li>
+                <li><a href="{{ url_for('logout') }}" class="navigation__btn">Sign out</a></li>           
+            </ul>
+        </div>
+    </div>
+ 
+    <h1 class="case__title">Prediction</h1>
+   <div class="prediction__container">
+    <div class="prediction__left">
+        <img src=".\static\images\mri_scan.png" alt="">
+    </div>
+    <div class="prediction__right">
+        <img src=".\static\images\prediction.png" alt="">
+    </div>
+   </div>
+   <div class="prediction__key__title">Key</div>
+   <div class="prediction__key">
+        <div class="prediction__key__item">
+            <span class="heading">Red</span>
+            <span class="item">Small</span>
+        </div>
+        <div class="prediction__key__item">
+            <span class="heading">Blue</span>
+            <span class="item">Large</span>
+        </div>
+        <div class="prediction__key__item">
+            <span class="heading">Green</span>
+            <span class="item">Stomach</span>
+        </div>
+   </div>
+    
+</body>
+</html>

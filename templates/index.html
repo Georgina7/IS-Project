@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+    <title>Ai Contour</title>
+</head>
+<body>
+    <div class="navigation">
+        <div class="navigation__left">
+            <div class="logo"><a href="index.html" class="navigation__logo">AI Contour</a></div>
+        </div>
+        <div class="navigation__right">
+            <ul>
+                <li ><span class="fas fa-user-alt"></span><span>  User Name</span></li>
+                <li><a href="{{ url_for('logout') }}" class="navigation__btn">Sign out</a></li>           
+            </ul>
+        </div>
+    </div>
+    <div class="fab">
+        <a href="#" class="fab__btn"><label for="fab-toggle">+</label></a>
+        <input type="checkbox" name="fab-toggle" id="fab-toggle" class="fab__checkbox">
+        <div class="fab__menu">
+            <h1>New Case</h1>
+            <form action="{{ url_for('add_case') }}" method="POST">
+                <label for="case__number"> Case Number</label>
+                <input type="number" name="case__number" id="case__number">
+                <button type="submit" class="scan__btn">Add Case</button>
+            </form>            
+        </div>
+    </div>
+    <div class="case__container">
+        {%for key, value in cases.items()%}
+        <div class="card">
+            <div class="front">
+                <div class="card__sign">
+                    <span> <i class='fas fa-file-medical-alt'></i></span>
+                </div>
+                <ul class="card__front__list">
+                    <li>Case Number: <span>{{ value[1] }}</span> </li>
+                    <li>Total days: <span>{{ value[0] }}</span></li>
+                </ul>
+            </div>
+            <div class="back">
+                <h2 class="card__back__title">Case No: <span>{{ value[1] }}</span></h2>
+               <ul class="card__back__list">
+                {%for i in range(value[0])%}
+                    <li><a href="#">Day {{ i + 1 }}</a></li>
+                {%endfor%}
+               </ul>
+               <a href="{{url_for('case', case_id=key, case_no=value[1])}}" class="card__back__btn">View Case</a>    
+            </div>
+        </div>
+        {%endfor%}
+        
+    </div>
+</body>
+</html>
